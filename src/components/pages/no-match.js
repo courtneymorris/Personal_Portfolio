@@ -8,7 +8,7 @@ export default function() {
                 Sorry, that page doesn't exist!
             </h2>
 
-            <Link to="/">Go Back Home</Link>
+            <Link to="/">Back To Home</Link>
         </div>
     )
 }
