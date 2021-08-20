@@ -18,12 +18,15 @@ export default function(props) {
                 }}
             />
 
+            <div className="img-text-wrapper">
+                <div className="logo-wrapper">
+                    <img src={logo_url} />
+                </div>
 
-            <img src={logo_url} />
-            <div>
-                {description}
+                <div className="subtitle">
+                    {description}
+                </div>
             </div>
-        <Link to={`/portfolio/${id}`}>Link</Link>
         </div>
     )
 }
