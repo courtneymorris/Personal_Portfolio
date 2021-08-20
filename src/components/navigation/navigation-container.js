@@ -18,7 +18,7 @@ export default class NavigationComponent extends Component {
 
                     <div className="nav-link-wrapper">
                         <NavLink exact to="/about" activeClassName="nav-link-active">
-                            About
+                            About Me
                         </NavLink>
                     </div>
 
@@ -34,7 +34,7 @@ export default class NavigationComponent extends Component {
                         </NavLink>
                     </div>
                 </div>
-                
+
                 <div className="right-side">
                     Courtney Morris
                 </div>
