@@ -37,7 +37,7 @@ export default class App extends Component {
       loggedInStatus: "NOT_LOGGED_IN"
     })
   }
-  
+
     render() {
       return (
         <div className='container'>
@@ -45,7 +45,7 @@ export default class App extends Component {
             <div>
               <NavigationContainer />
 
-
+              <h2>{this.state.loggedInStatus}</h2>
 
               <Switch>
                 <Route exact path="/" component={Home} />
