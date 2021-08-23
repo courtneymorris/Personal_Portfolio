@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -36,6 +37,20 @@ export default class App extends Component {
     this.setState({
       loggedInStatus: "NOT_LOGGED_IN"
     })
+  }
+
+  checkLoginStatus() {
+    return axios
+      .get("https://api.devcamp.space/logged_in", {
+      withCredentials: true
+    })
+    .then(response=> {
+      console.log("logged_in return", response);
+    });
+  }
+
+  componentDidMount() {
+    this.checkLoginStatus();
   }
 
     render() {
