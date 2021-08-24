@@ -44,4 +44,4 @@ const NavigationComponent = (props) => {
     );
 }
 
-    export default NavigationComponent
+export default NavigationComponent
