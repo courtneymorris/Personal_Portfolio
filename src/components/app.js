@@ -32,19 +32,19 @@ export default class App extends Component {
   handleSuccessfulLogin() {
     this.setState({
       loggedInStatus: "LOGGED_IN"
-    })
+    });
   }
 
   handleUnsuccessfulLogin() {
     this.setState({
       loggedInStatus: "NOT_LOGGED_IN"
-    })
+    });
   }
 
   handleSuccessfulLogout() {
     this.setState({
       loggedInStatus: "NOT_LOGGED_IN"
-    })
+    });
   }
 
   checkLoginStatus() {
@@ -52,8 +52,24 @@ export default class App extends Component {
       .get("https://api.devcamp.space/logged_in", {
       withCredentials: true
     })
-    .then(response=> {
-      console.log("logged_in return", response);
+    .then(response => {
+      const loggedIn = response.data.logged_in;
+      const loggedInStatus = this.state.loggedInStatus;
+
+      if (loggedIn && loggedInStatus === "LOGGED_IN") {
+        return loggedIn;
+      } else if (loggedIn && loggedInStatus === "NOT_LOGGED_IN") {
+        this.setState({
+          loggedInStatus: "LOGGED_IN"
+        });
+      } else if (!loggedIn && loggedInStatus === "LOGGED_IN") {
+        this.setState({
+          loggedInStatus: "NOT_LOGGED_IN"
+        });
+      }
+    })
+    .catch(error => {
+      console.log("Error", error);
     });
   }
 
