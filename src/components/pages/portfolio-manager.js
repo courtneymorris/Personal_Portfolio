@@ -17,24 +17,24 @@ export default class PortfolioManager extends Component {
     }
 
     handleSuccessfulFormSubmission(portfolioItem) {
-        // TODO
-        // update the portfolioItems state
-        // and add the portfolioItem to the list
+        this.setState({
+          portfolioItems: [portfolioItem].concat(this.state.portfolioItems)
+        });
     }
 
     handleFormSubmissionError(error) {
-        console.log("handle form submission error", error)
+        console.log("handleFormSubmissionError error", error)
     }
 
     getPortfolioItems() {
-        axios.get("https://courtneymorris.devcamp.space/portfolio/portfolio_items", {
+        axios.get("https://courtneymorris.devcamp.space/portfolio/portfolio_items?order_by=created_at&direction=desc", {
             withCredentials: true
         }).then(response => {
             this.setState({
                 portfolioItems: [...response.data.portfolio_items]
             });
         }).catch(error => {
-            console.log("Error in get portfolio items: ", error)
+            console.log("Error in getPortfolioItems: ", error)
         });
     }
 
@@ -53,7 +53,9 @@ export default class PortfolioManager extends Component {
                 </div>
 
                 <div className="right-column">
-                    <PortfolioSidebarList data={this.state.portfolioItems}/>
+                    <PortfolioSidebarList
+                    data={this.state.portfolioItems}
+                    />
                 </div>
             </div>
         )
