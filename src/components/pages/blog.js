@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
 import BlogItem from "../blog/blog-item";
+import BlogModal from "../modals/blog-modal";
 
 export default class Blog extends Component {
   constructor() {
@@ -76,6 +77,7 @@ export default class Blog extends Component {
 
     return (
       <div className="blog-container">
+        <BlogModal />
         <div className="content-container">{blogRecords}</div>
 
         {this.state.isLoading ? (
