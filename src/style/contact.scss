@@ -1,0 +1,52 @@
+.contact-page-wrapper {
+  font-family: "Josefin Sans", sans-serif;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 84px);
+
+  @media only screen and (min-width: 0) and (max-width: 750px) {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .right-column-contact {
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 4rem;
+    text-align: center;
+
+    .contact-bullet-points {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 21px;
+
+      .bullet-point-group {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          font-size: 2em;
+          color: whitesmoke;
+        }
+
+        .text {
+          font-size: 1.5em;
+          font-weight: 400;
+          margin-left: 21px;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 1140px) {
+      padding-bottom: 20rem;
+      padding-top: 10rem;
+    }
+  }
+}

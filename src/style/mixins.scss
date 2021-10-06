@@ -5,8 +5,8 @@
   font-weight: 500;
   border: 1px solid transparent;
   transition: all 0.5 ease-in-out;
-  background-color: $teal;
-  color: white;
+  background-color: rgb(201, 126, 41);
+  color: whitesmoke;
 
   &:active,
   &:focus {
@@ -14,7 +14,8 @@
   }
 
   &:hover {
-    background-color: $dark-teal;
+    background-color: rgb(230, 88, 147);
+    transition: 0.5s ease-in-out;
   }
 }
 

@@ -1,9 +1,29 @@
+html,
 body {
-    margin: 0px;
-    font-family: 'Kanit', sans-serif;
+  margin: 0px;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Kanit", sans-serif;
+  background-image: linear-gradient(
+    to right,
+    #fbb64f 0%,
+    #d7486a 85%,
+    #da3a7f 100%
+  );
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
